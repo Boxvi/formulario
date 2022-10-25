@@ -1,11 +1,11 @@
 package formulario.controllers;
 
+import formulario.domain.Usuario;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 
@@ -17,12 +17,23 @@ public class FormController {
         return "form";
     }
 
+    /*
     @PostMapping("/form")
     public String procesar(Model model, @RequestParam String username, @RequestParam String password, @RequestParam String email) {
         model.addAttribute("titulo", "Formulario Resultado");
         model.addAttribute("username", username);
         model.addAttribute("password", password);
         model.addAttribute("email", email);
+        return "resultado";
+    }*/
+
+
+    @PostMapping("/form")
+    public String procesar(Model model, @RequestParam String username, @RequestParam String password, @RequestParam String email) {
+        model.addAttribute("titulo", "Formulario Resultado");
+        Usuario usuario = new Usuario(username, password, email);
+
+        model.addAttribute("usuario", usuario);
         return "resultado";
     }
 
