@@ -5,12 +5,14 @@ import lombok.Data;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
 public class Usuario {
 
+    @Pattern(regexp = "[0-9]{2}-[0-9]{4}-[0-9]{4}-[A-Z]{1}", message = "El formato del identificador es incorrecto")
     private String identificador;
 
     @NotEmpty
