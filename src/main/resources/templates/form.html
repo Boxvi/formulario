@@ -19,6 +19,54 @@
     <form th:action="@{/form}" th:object="${usuario}" method="post">
 
         <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+
+            <input type="text" class="form-control" name="nombre" id="nombre" th:field="*{nombre}">
+        </div>
+        <div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Nombre</label>
+
+            <input type="text" class="form-control" name="apellido" id="apellido" th:field="*{apellido}">
+        </div>
+        <div th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+
+            <input type="text" class="form-control" name="username" id="username" th:field="*{username}">
+        </div>
+        <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" th:field="*{email}">
+        </div>
+
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" th:field="*{password}">
+        </div>
+
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+
+    </form>
+</div>
+
+</body>
+</html>
+
+<!--
+
+<div class="m-5">
+    <h1 th:text="${titulo}"></h1>
+    <form th:action="@{/form}" th:object="${usuario}" method="post">
+
+        <div class="mb-3">
             <label for="username" class="form-label">Username</label>
 
             <input type="text" class="form-control" name="username" id="username" th:field="*{username}">
@@ -42,10 +90,10 @@
     </form>
 </div>
 
-</body>
-</html>
+<br>
+<br>
+<br>
 
-<!--
 <div class="m-5">
     <h1 th:text="${titulo}"></h1>
     <form th:action="@{/form}" method="post">

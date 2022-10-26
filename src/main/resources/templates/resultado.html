@@ -18,11 +18,17 @@
     <h1 th:text="${titulo}"></h1>
 
     <ul>
+        <li class="mb-3">Username: <span th:text="${usuario.nombre}"></span></li>
+
+        <li class="mb-3">Username: <span th:text="${usuario.apellido}"></span></li>
+
         <li class="mb-3">Username: <span th:text="${usuario.username}"></span></li>
 
         <li class="mb-3">Password: <span th:text="${usuario.password}"></span></li>
 
         <li class="mb-3">Email: <span th:text="${usuario.email}"></span></li>
+
+        <li class="mb-3">Identificador: <span th:text="${usuario.identificador}"></span></li>
 
     </ul>
 
