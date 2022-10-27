@@ -30,6 +30,11 @@ public class Usuario {
     @Email
     private String email;
 
+    @NotNull(message = "El campo debe ser un numero entero")
+    @Min(5)
+    @Min(5000)
+    private Integer cuenta;
+
     public Usuario() {
     }
 }
