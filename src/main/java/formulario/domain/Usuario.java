@@ -1,12 +1,10 @@
 package formulario.domain;
 
+import formulario.validation.Requerido;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Data
 @AllArgsConstructor
@@ -18,10 +16,10 @@ public class Usuario {
     @NotEmpty
     private String nombre;
 
-    @NotEmpty
+    @Requerido
     private String apellido;
 
-    @NotEmpty(message = "El usuario no puede estar vacio")
+    @Requerido
     @Size(min = 3, max = 8)
     private String username;
 
